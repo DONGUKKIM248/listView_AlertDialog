@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = new ListView(this);
         //Add data to Array List
         //List<String> data = new ArrayList<>();
+        //추가
         ArrayList<String> category = new ArrayList<>();
 
         category.add("개인정보 침해");
