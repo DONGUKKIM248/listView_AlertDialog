@@ -1,15 +1,16 @@
 package com.example.listview_alertdialog;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import java.util.List;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = new ListView(this);
         //Add data to Array List
         //List<String> data = new ArrayList<>();
-        List<String> data = new ArrayList<>();
+        ArrayList<String> data = new ArrayList<>();
 
         data.add("개인정보 침해");
         data.add("부적절한 사진");
@@ -43,20 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
         // do action to Edit text
         EditText txtDate = (EditText) findViewById(R.id.txtDays);
-        txtDate.setOnClickListener(new View.OnClickListener() {
+        txtDate.setOnClickListener(new View.OnClickListener() { //클릭이되면
             @Override
             public void onClick(View v) {
                 dialog.show();
-            }
+            } //dialog를 보여준다.
         });
 
         //add action to listView to select date to Edit text
-
-        listView.setOnClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                txtDate.setText(adapter.getItem(position));
-                dialog.dismiss();
+                txtDate.setText(adapter.getItem(position)); //adapter(선택창)에서 클릭위치의 item 얻어서 setText에 전달
+                dialog.dismiss(); //사라진다.
             }
         });
     }
