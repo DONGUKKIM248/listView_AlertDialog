@@ -22,18 +22,18 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = new ListView(this);
         //Add data to Array List
         //List<String> data = new ArrayList<>();
-        ArrayList<String> data = new ArrayList<>();
+        ArrayList<String> category = new ArrayList<>();
 
-        data.add("개인정보 침해");
-        data.add("부적절한 사진");
-        data.add("부적절한 내용");
-        data.add("광고 및 스팸");
-        data.add("욕설");
-        data.add("혐오표현");
-        data.add("기타");
+        category.add("개인정보 침해");
+        category.add("부적절한 사진");
+        category.add("부적절한 내용");
+        category.add("광고 및 스팸");
+        category.add("욕설");
+        category.add("혐오표현");
+        category.add("기타");
 
         //Create Array adapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,category);
         listView.setAdapter(adapter);
 
         //Now we add list View to alert bpx
